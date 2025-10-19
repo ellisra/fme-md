@@ -21,6 +21,7 @@ Commands:
   replace         Replace a tag with another
   clear           Remove all tags from notes
   remove-aliases  Remove unused alias fields
+  remove-id       Remove Id field
   help            Print this message or the help of the given subcommand(s)
 
 Options:
