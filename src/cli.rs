@@ -9,8 +9,10 @@ pub enum Command {
     Add {
         #[arg(required = true)]
         tags: Vec<String>,
+
         #[arg(short, long)]
         dir: PathBuf,
+
         #[arg(short, long)]
         recursive: bool,
     },
@@ -19,8 +21,10 @@ pub enum Command {
     Remove {
         #[arg(required = true)]
         tags: Vec<String>,
+
         #[arg(short, long)]
         dir: PathBuf,
+
         #[arg(short, long)]
         recursive: bool,
     },
@@ -29,10 +33,13 @@ pub enum Command {
     Replace {
         #[arg(required = true)]
         initial_tag: String,
+
         #[arg(required = true)]
         new_tag: String,
+
         #[arg(short, long)]
         dir: PathBuf,
+
         #[arg(short, long)]
         recursive: bool,
     },
@@ -41,6 +48,7 @@ pub enum Command {
     Clear {
         #[arg(short, long)]
         dir: PathBuf,
+
         #[arg(short, long)]
         recursive: bool,
     },
@@ -49,6 +57,7 @@ pub enum Command {
     RemoveAliases {
         #[arg(short, long)]
         dir: PathBuf,
+
         #[arg(short, long)]
         recursive: bool,
     },
@@ -57,13 +66,17 @@ pub enum Command {
     RemoveId {
         #[arg(short, long)]
         dir: PathBuf,
+
         #[arg(short, long)]
         recursive: bool,
     },
 }
 
 #[derive(Debug, Parser)]
-#[command(name = "fme", about = "CLI tool for managing markdown YAML frontmatter")]
+#[command(
+    name = "fme",
+    about = "CLI tool for managing markdown YAML frontmatter"
+)]
 pub struct Opt {
     #[command(subcommand)]
     pub cwd: Command,

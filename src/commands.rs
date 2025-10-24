@@ -124,9 +124,7 @@ pub fn clear_tags(content: &str) -> Result<String, Box<dyn std::error::Error>> {
     Ok(format!("---\n{}---\n{}", yaml, content_body))
 }
 
-pub fn remove_blank_aliases(
-    content: &str,
-) -> Result<String, Box<dyn std::error::Error>> {
+pub fn remove_blank_aliases(content: &str) -> Result<String, Box<dyn std::error::Error>> {
     let (mut frontmatter, content_body) = match parse_frontmatter(content) {
         Ok(result) => result,
         Err(_) => return Ok(content.to_string()),
