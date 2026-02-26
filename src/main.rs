@@ -11,7 +11,7 @@ use fs_utils::process_directory;
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     let opt = Opt::parse();
 
-    match opt.cwd {
+    match opt.cmd {
         Command::Add {
             tags,
             dir,

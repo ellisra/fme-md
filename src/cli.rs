@@ -79,5 +79,5 @@ pub enum Command {
 )]
 pub struct Opt {
     #[command(subcommand)]
-    pub cwd: Command,
+    pub cmd: Command,
 }
